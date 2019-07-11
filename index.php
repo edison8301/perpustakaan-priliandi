@@ -32,7 +32,6 @@ $tgl=date('Y-m-d');
 			<a href="index.php?p=beranda">Beranda</a>
 			<p class="label-navigasi">Entry Data Dan Transaksi</p>
 			<ul>
-				<li><a href="index.php?p=user">Data User</a></li>
 				<li><a href="index.php?p=anggota">Data Anggota</a></li>
 				<li><a href="index.php?p=buku">Data Buku</a></li>
 				<li><a href="index.php?p=transaksi-peminjaman">Transaksi Peminjaman</a></li>

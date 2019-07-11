@@ -15,7 +15,7 @@
 
 		<?php
 		$q_transaksi=mysqli_query($koneksi,
-			"SELECT tbtransaksi.*,tbanggota.*,tbbuku.*
+			"SELECT *
 			FROM tbtransaksi,tbanggota,tbbuku
 			WHERE tbtransaksi.idanggota=tbanggota.idanggota
 			AND tbtransaksi.idbuku=tbbuku.idbuku
@@ -34,7 +34,6 @@
 			<td><?php echo $r_transaksi['judulbuku']; ?></td>
 			<td><?php echo $r_transaksi['tglpinjam']; ?></td>
 			<td>
-				<div class="tombol-opsi-container"><a href="cetak/nota-peminjaman.php?&id=<?php echo $r_transaksi['idtransaksi'];?>" target="_blank" class="tombol">Cetak Nota</a></div>
 				<div class="tombol-opsi-container"><a href="proses/pengembalian-proses.php?&id=<?php echo $r_transaksi['idtransaksi'];?>" class="tombol">Pengembalian</a></div>
 			</td>
 		</tr>

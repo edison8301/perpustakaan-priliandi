@@ -12,12 +12,12 @@
 				<select name="id_anggota" class="isian-formulir isian-formulir-border">
 					<option value="" select="selected">~ Pilih Anggota ~</option>
 					<?php
-						$q_tampil_anggota=mysql_query(
+						$q_tampil_anggota=mysqli_query($koneksi,
 							"SELECT * FROM tbanggota
 							WHERE status='Tidak Meminjam'
 							ORDER BY idanggota"
 						);
-						while($r_tampil_anggota=mysql_fetch_array($q_tampil_anggota)){
+						while($r_tampil_anggota=mysqli_fetch_array($q_tampil_anggota)){
 							echo"<option value=$r_tampil_anggota[idanggota]>$r_tampil_anggota[idanggota] | $r_tampil_anggota[nama]</option>";
 						}
 					?>
@@ -30,12 +30,12 @@
 				<select name="id_buku" class="isian-formulir isian-formulir-border">
 					<option value="" select="selected">~ Pilih Buku ~</option>
 					<?php
-						$q_tampil_buku=mysql_query(
+						$q_tampil_buku=mysqli_query($koneksi,
 							"SELECT * FROM tbbuku
 							WHERE status='Tersedia'
 							ORDER BY idbuku"
 						);
-						while($r_tampil_buku=mysql_fetch_array($q_tampil_buku)){
+						while($r_tampil_buku=mysqli_fetch_array($q_tampil_buku)){
 							echo"<option value=$r_tampil_buku[idbuku]>$r_tampil_buku[idbuku] | $r_tampil_buku[judulbuku]</option>";
 						}
 					?>
