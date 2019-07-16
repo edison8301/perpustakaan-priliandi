@@ -40,7 +40,7 @@
                                         <td><?php echo $no++?></td>    
                                         <td><?php echo $data['kd_buku'];?></td>
                                         <td><?php echo $data['id_kategori'];?></td>
-                                        <td><a href="?page=buku&aksi=detail&kd_buku=<?=$data['kd_buku']?>"><?=$data['judul']; ?></a></td>
+                                        <td><?php echo $data['judul']; ?></a></td>
                                         <td><?php echo $data['pengarang'];?></td>
                                         <td><?php echo $data['penerbit'];?></td>
                                         <td><?php echo $data['thn_terbit'];?></td>

@@ -129,11 +129,8 @@ return true;
 
 
 
-<div class="panel panel-default">
-   
-    <div class="panel-body">
-
-       <div class="col-lg-12">
+  <div class="col-lg-6">
+                        <div class="panel-body">
           <div class="card-header">
             <strong>Ubah Data</strong> <a href="?page=anggota" class="col-cyan waves-effect pull-right">Lihat Data</a></div>
           <div class="card">
@@ -141,7 +138,7 @@ return true;
                 <form id="form_validation" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>ID Anggota</label>
-                        <input type="text" id="nis" oninput="fungsinis()"  class="form-control" maxlength="12" placeholder="ID Anggota" value="<?php echo $tampil['nis_nip']?>" name="nis_nip" required onkeypress="return Angkasaja(event)"/>
+                        <input type="text" id="nis" oninput="fungsinis()"  class="form-control" maxlength="12" placeholder="ID Anggota" value="<?php echo $tampil['nis_nip']?>" name="nis_nip" required onkeypress="return Angkasaja(event)"readonly />
                     </div>
 
                     <div class="form-group">
@@ -150,15 +147,17 @@ return true;
                     </div>
 
 
+                     <div class="form-group">
+                        <label>No Tlpn</label>
+                        <input type="text"  class="form-control" maxlength="12" placeholder="NO TLPN" value="<?php echo $tampil['no_tlpn']?>" name="no_tlpn" required onkeypress="return Angkasaja(event)"/>
+                    </div>
+
+
                     <div class="form-group">
                         <label>Alamat</label>
                         <input type="alamat" id="alamat" name="alamat" placeholder="Alamat" class="form-control" value="<?php echo $tampil['alamat']?>" required  />
                     </div>
 
-                      <div class="form-group">
-                        <label>No Tlpn</label>
-                        <input type="text"  class="form-control" maxlength="12" placeholder="NO TLPN" value="<?php echo $tampil['no_tlpn']?>" name="no_tlpn" required onkeypress="return Angkasaja(event)"/>
-                    </div>
 
 
                    <div class="form-group">
@@ -216,7 +215,7 @@ return true;
 
         if ($simpan) {
              move_uploaded_file($file,"images/".$name);
-        $sql = $koneksi->query("update tb_anggota set nama_anggota='$nama_anggota',username='$username',password='$password_hashing',alamat='$alamat',no_tlpn='$no_tlpn',foto='$name',tgl_lahir='$tgl_lahir',jk='$jk',jurusan='$jurusan' where nis_nip='$nis_nip'");
+        $sql = $koneksi->query("update tb_anggota set nama_anggota='$nama_anggota',username='$username',password='$password_hashing',no_tlpn='$no_tlpn',alamat='$alamat',foto='$name',tgl_lahir='$tgl_lahir',jk='$jk',jurusan='$jurusan' where nis_nip='$nis_nip'");
 
             if ($sql) {
                 

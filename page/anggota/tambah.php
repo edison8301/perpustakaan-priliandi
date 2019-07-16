@@ -72,6 +72,8 @@ function fungsinama() {
     document.getElementById("hasilnama").innerHTML = x;
 }
 
+
+
 function fungsinis() {
     var settings = {
         barWidth: 1,
@@ -114,13 +116,10 @@ return true;
 
 </script>
 
+<div class="col-lg-6">
+                        <div class="panel-body">
 
-
-    <div class="panel-heading">
     
-    <div class="panel-body">
-
-       <div class="col-lg-12">
 
           <div class="card-header">
             <strong>Tambah Data</strong> <a href="?page=anggota" class="col-cyan waves-effect pull-right">Lihat Data</a></div>
@@ -130,7 +129,7 @@ return true;
                 <form id="form_validation" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>ID Anggota</label>
-                        <input type="number" id="nis" class="form-control" placeholder="ID Anggota" name="nis_nip" oninput="fungsinis()" required />
+                        <input type="number" id="nis" class="form-control" placeholder="ID Anggota" name="nis_nip" oninput="fungsinis()" readonly />
                     </div>
 
                     <div class="form-group">
@@ -138,15 +137,17 @@ return true;
                         <input type="text" id="nama" class="form-control" placeholder="NAMA" name="nama_anggota" oninput="fungsinama()" required   />
                     </div>
 
-                    <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" id="alamat" name="alamat" placeholder="Alamat" class="form-control" required />
-                    </div>
 
                     <div class="form-group">
                         <label>No Tlpn</label>
                         <input type="text"  class="form-control" maxlength="12" placeholder="NO TLPN"  name="no_tlpn" required onkeypress="return Angkasaja(event)"/>
                     </div>
+
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" id="alamat" class="form-control" placeholder="Alamat" name="alamat" oninput=" " required />
+                    </div>
+
 
 
                     <div class="form-group">
@@ -194,8 +195,8 @@ $file = $_FILES['foto']['tmp_name'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $password_hashing = md5(sha1(crc32($_POST['password'])));
-$alamat = $_POST['alamat'];
 $no_tlpn = $_POST['no_tlpn'];
+$alamat = $_POST['alamat'];
 $tanggal = $_POST['tgl_lahir'];
 $jk = $_POST['jk'];
 $jurusan = $_POST['jurusan'];
@@ -204,7 +205,7 @@ $simpan = $_POST['simpan'];
 
 if ($simpan) {
      move_uploaded_file($file,"images/".$name);
-    $sql = $koneksi->query("insert into tb_anggota(nis_nip,nama_anggota,foto,username,password,alamat,no_tlpn,tgl_lahir,jk,jurusan)values('$nis_nip','$nama_anggota','$name','$username','$password_hashing','alamat','$no_tlpn','$tanggal','$jk','$jurusan')");
+    $sql = $koneksi->query("insert into tb_anggota(nis_nip,nama_anggota,foto,username,password,no_tlpn,alamat,tgl_lahir,jk,jurusan)values('$nis_nip','$nama_anggota','$name','$username','$password_hashing','$no_tlpn','$alamat','$tanggal','$jk','$jurusan')");
 
    
 

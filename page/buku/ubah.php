@@ -130,9 +130,8 @@ function fungsipenerbit() {
 
 
    
-    <div class="panel-body">
-
-       <div class="col-lg-12">
+   <div class="col-lg-6">
+                        <div class="panel-body">
           <div class="card-header">
             <strong>Ubah Data</strong> <a href="?page=buku" class="col-cyan waves-effect pull-right">Lihat Data</a></div>
           <div class="card">
@@ -140,7 +139,7 @@ function fungsipenerbit() {
                 <form id="form_validation" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                 <label>KD Buku</label>
-                <input class="form-control" name="kd_buku" id="kd_buku" placeholder="KODE BUKU" oninput="fungsikd()" value="<?php echo $tampil['kd_buku'];?>" required/>
+                <input class="form-control" name="kd_buku" id="kd_buku" placeholder="KODE BUKU" oninput="fungsikd()" value="<?php echo $tampil['kd_buku'];?>" readonly/>
             </div>
 
                 <div class="form-group">

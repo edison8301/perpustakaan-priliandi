@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2019 at 06:02 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Waktu pembuatan: 18 Bulan Mei 2019 pada 06.17
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_anggota`
+-- Struktur dari tabel `tb_anggota`
 --
 
 CREATE TABLE `tb_anggota` (
@@ -40,20 +42,22 @@ CREATE TABLE `tb_anggota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_anggota`
+-- Dumping data untuk tabel `tb_anggota`
 --
 
 INSERT INTO `tb_anggota` (`nis_nip`, `nama_anggota`, `username`, `password`, `alamat`, `no_tlpn`, `foto`, `tgl_lahir`, `jk`, `jurusan`) VALUES
-(9, 'Badrul', '', '56018323b921dd2c5444', 'alamat', '0490234920', '', '0000-00-00', 'L', ''),
-(34, 'Agus', '', '56018323b921dd2c5444', 'alamat', '094818418', '', '0000-00-00', 'L', ''),
-(45, 'Rana', '', '56018323b921dd2c5444', 'alamat', '02490240204', '', '0000-00-00', 'L', ''),
-(45454, 'dadan', 'dani', '0a3b3d4831f7cf573ea1', 'Jl. Tluki 1', '098384662334', '', '1998-02-03', 'P', 'perhotelan'),
-(45464, 'ninda', 'ninda', 'b2e24957744c51aeeda1', 'Semangut', '082246524086', '', '1998-05-02', 'P', 'tataboga');
+(45454, 'dani', 'dani', '3ef06256b42a1fe6ddf7', 'Jl. Tluki 1', '098384662334', '', '1998-02-03', 'P', 'perhotelan'),
+(45464, 'ninda', 'ninda', 'b2e24957744c51aeeda1', 'Semangut', '082246524086', '', '1998-05-02', 'P', 'tataboga'),
+(676545, 'vina', '676545', 'ab3615079222f64edd8d', 'Klaten', '087366255362', '', '1999-05-08', 'P', 'kecantikan'),
+(2343454, 'galih', 'gading', 'gading123', '', '083552663828', '64-2.jpg', '1998-07-02', 'L', 'perhotelan'),
+(5654546, 'fani', 'fani', 'fani123', '', '2147483647', '2.jpg', '2019-04-09', 'P', 'kecantikan'),
+(16029398, 'ilmi', '16029398', 'b1a103cf4b5fe6a80975', '', '086255366272', 'il.jpg', '1998-03-08', 'L', 'perhotelan'),
+(16029937, 'dayat', '16029937', '7aefdc67c85506f8827a', '', '048365466223', '64-1.jpg', '2005-01-03', 'L', 'perhotelan');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_buku`
+-- Struktur dari tabel `tb_buku`
 --
 
 CREATE TABLE `tb_buku` (
@@ -70,24 +74,22 @@ CREATE TABLE `tb_buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_buku`
+-- Dumping data untuk tabel `tb_buku`
 --
 
 INSERT INTO `tb_buku` (`kd_buku`, `id_kategori`, `judul`, `pengarang`, `penerbit`, `thn_terbit`, `isbn`, `jumlah_buku`, `lokasi`, `tgl_input`) VALUES
-('00003', 'K002', 'Kemanusiaan', 'Priliyandi', 'Media ', '2009', '', 2, '', '2019-07-12'),
 ('10', 'K001', 'Basis Data', 'Basis', 'Data', '2017', '3536728394', 1, 'rak 1', '2019-01-07'),
 ('11', 'K001', 'CSS dan HTML', 'coding pinter', 'server', '2019', '55362882', 5, 'rak 2', '2018-04-03'),
 ('12', 'K001', 'SIM', 'sistem informasi', 'informasi', '2018', '45536745433', 2, 'rak 2', '2019-03-13'),
 ('13', 'K001', 'Logika dan Algoritma', 'Basis', 'Data', '2004', '3434335545', 3, 'rak 1', '2019-01-07'),
-('278', 'K002', 'Diatas Langit', 'Reza', 'Utama Mandiri', '2009', '', 3, '', '2019-07-02'),
-('52', 'K002', 'Insan Mandiri', 'Sukardi', 'Betharia', '2010', '', 2, '', '2019-07-09'),
 ('B002', 'K001', 'Sejarah', 'lama', 'dahulu', '2016', '554734553', 1, 'rak 1', '2019-03-05'),
-('B003', 'K001', 'Biologi', 'handayani', 'erlangga', '2019', '554663783', 0, 'rak 2', '2019-03-20');
+('B003', 'K001', 'Biologi', 'handayani', 'erlangga', '2019', '554663783', 0, 'rak 2', '2019-03-20'),
+('K010', 'K001', 'Bahasa Inggris II', 'people', 'master', '2018', '1232-1222-311', 5, 'rak 1', '2019-05-13');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_detpeminjaman`
+-- Struktur dari tabel `tb_detpeminjaman`
 --
 
 CREATE TABLE `tb_detpeminjaman` (
@@ -98,7 +100,7 @@ CREATE TABLE `tb_detpeminjaman` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_kategori`
+-- Struktur dari tabel `tb_kategori`
 --
 
 CREATE TABLE `tb_kategori` (
@@ -107,7 +109,7 @@ CREATE TABLE `tb_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_kategori`
+-- Dumping data untuk tabel `tb_kategori`
 --
 
 INSERT INTO `tb_kategori` (`id_kategori`, `kategori`) VALUES
@@ -121,7 +123,7 @@ INSERT INTO `tb_kategori` (`id_kategori`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_peminjaman`
+-- Struktur dari tabel `tb_peminjaman`
 --
 
 CREATE TABLE `tb_peminjaman` (
@@ -137,17 +139,18 @@ CREATE TABLE `tb_peminjaman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_peminjaman`
+-- Dumping data untuk tabel `tb_peminjaman`
 --
 
 INSERT INTO `tb_peminjaman` (`kd_pinjam`, `kd_buku`, `judul`, `judul_2`, `nis_nip`, `nama_anggota`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
-('T020', '', 'Kemanusiaan', '', 9, 'Badrul', '12-07-2019', '26-07-19', 'pinjam'),
-('T021', '', 'Kemanusiaan', '', 34, 'Agus', '12-07-2019', '19-07-2019', 'pinjam');
+('T017', '', 'Biologi', '', 45454, 'dani', '15-05-2019', '22-05-2019', 'pinjam'),
+('T018', '', 'Bahasa Inggris II', '', 16029398, 'ilmi', '15-05-2019', '22-05-2019', 'pinjam'),
+('T019', '', 'Biologi', '', 5654546, 'fani', '18-05-2019', '25-05-2019', 'pinjam');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_petugas`
+-- Struktur dari tabel `tb_petugas`
 --
 
 CREATE TABLE `tb_petugas` (
@@ -161,18 +164,17 @@ CREATE TABLE `tb_petugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_petugas`
+-- Dumping data untuk tabel `tb_petugas`
 --
 
 INSERT INTO `tb_petugas` (`kd_petugas`, `nip`, `username`, `password`, `nama_petugas`, `foto`, `no_tlpn`) VALUES
-('P002', 45653, 'miftah9398', '66dd9ad231c7eed5852c', 'miftah', 'admin1.png', '2147483647'),
-('P003', 2333, 'admin', 'admin', 'admin', 'work.jpg', '942042424949'),
-('P004', 423423, 'priliyandi', 'priliyandi', 'Priliyandi', 'IMG20180620135903.jp', '9124891488');
+('P001', 1233423, 'admin1', 'admin345', 'parman', '2.jpg', '038836254444'),
+('P002', 45653, 'miftah9398', '66dd9ad231c7eed5852c', 'miftah', 'admin1.png', '2147483647');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_transaksi`
+-- Struktur dari tabel `tb_transaksi`
 --
 
 CREATE TABLE `tb_transaksi` (
@@ -190,13 +192,13 @@ CREATE TABLE `tb_transaksi` (
 --
 
 --
--- Indexes for table `tb_anggota`
+-- Indeks untuk tabel `tb_anggota`
 --
 ALTER TABLE `tb_anggota`
   ADD PRIMARY KEY (`nis_nip`);
 
 --
--- Indexes for table `tb_buku`
+-- Indeks untuk tabel `tb_buku`
 --
 ALTER TABLE `tb_buku`
   ADD PRIMARY KEY (`kd_buku`),
@@ -205,19 +207,19 @@ ALTER TABLE `tb_buku`
   ADD KEY `id_kategori_3` (`id_kategori`);
 
 --
--- Indexes for table `tb_detpeminjaman`
+-- Indeks untuk tabel `tb_detpeminjaman`
 --
 ALTER TABLE `tb_detpeminjaman`
   ADD PRIMARY KEY (`kd_peminjaman`);
 
 --
--- Indexes for table `tb_kategori`
+-- Indeks untuk tabel `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `tb_peminjaman`
+-- Indeks untuk tabel `tb_peminjaman`
 --
 ALTER TABLE `tb_peminjaman`
   ADD PRIMARY KEY (`kd_pinjam`),
@@ -226,13 +228,13 @@ ALTER TABLE `tb_peminjaman`
   ADD KEY `nis_2` (`nis_nip`);
 
 --
--- Indexes for table `tb_petugas`
+-- Indeks untuk tabel `tb_petugas`
 --
 ALTER TABLE `tb_petugas`
   ADD PRIMARY KEY (`kd_petugas`);
 
 --
--- Indexes for table `tb_transaksi`
+-- Indeks untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
   ADD PRIMARY KEY (`kd`),
@@ -246,23 +248,25 @@ ALTER TABLE `tb_transaksi`
   ADD KEY `nis_8` (`nis`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_transaksi`
+-- AUTO_INCREMENT untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
   MODIFY `kd` int(9) NOT NULL AUTO_INCREMENT;
+
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tb_transaksi`
+-- Ketidakleluasaan untuk tabel `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
   ADD CONSTRAINT `tb_transaksi_ibfk_1` FOREIGN KEY (`nis`) REFERENCES `tb_anggota` (`nis_nip`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

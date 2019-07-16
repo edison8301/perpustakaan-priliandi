@@ -113,13 +113,12 @@ function fungsipenerbit() {
 
 
 
-       
-<div class="pannel-body">
-<div class="row">
-       <div class="col-md-12">
+<div class="col-lg-6">
+                        <div class="panel-body">
+
           <div class="card-header">
             <strong>Tambah Data</strong> <a href="?page=buku" class="col-cyan waves-effect pull-right">Lihat Data</a></div>
-          <div class="row">
+          <div class="card">
             <div class="col-md-12">
                 <form id="form_validation" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
@@ -239,10 +238,6 @@ function fungsipenerbit() {
 
         $cekkd_buku = mysqli_query($koneksi, "SELECT kd_buku FROM tb_buku WHERE kd_buku = '$kd_buku'");
     if (mysqli_num_rows($cekkd_buku) > 0) 
-    {
-        echo "<script>alert('Berhasil menambahkan!!');</script>";
-        return false;
-    }
 
             if ($sql) {
                 
